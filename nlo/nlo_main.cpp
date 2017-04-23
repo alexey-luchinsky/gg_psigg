@@ -145,6 +145,7 @@ void parse_command_line(int argc, char **argv);
 void check_phsp_decay();
 
 int main(int argc, char **argv) {
+    clock_t now=clock();
     parse_command_line(argc, argv);
     initialize();
     print_starting_configuration();
@@ -333,6 +334,7 @@ int main(int argc, char **argv) {
     cout << BOLDGREEN << "[gggpsipsi] " << RESET;
     cout << "Job finished:" << endl << endl;
     cout << LIGHTCYAN;
+    cout << "            Elapsed time: "<< (double)(clock()-now)/CLOCKS_PER_SEC <<" seconds"<< endl;
     cout << "            SIGMA       = " << sigma_total << " nb" << endl;
     cout << "            SIGMA_ERR   = " << sigma_total_err << " nb" << endl;
     cout << "            ITERATIONS  = " << iteration_number << endl;
