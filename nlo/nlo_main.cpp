@@ -186,8 +186,9 @@ int main(int argc, char **argv) {
             //pretty print
             double percent = (100.0 * n_passed) / n_events;
             cout << fixed << setprecision(1);
-            cout << BOLDGREEN << "[gggpsipsi] " << RESET << percent << "% done ";
-            cout << "(" << (100.0 * n_dropped / iteration_number) << "% events dropped)" << endl;
+            cout << BOLDGREEN << "[gg_psigg] " << RESET << percent << "% done ";
+            cout << "(" << (100.0 * n_dropped / iteration_number) << "% events dropped)";
+            cout << " sigma = "<<0.384 * 1e6*sigma_total/iteration_number << endl;
 
             //restore default cout flags
             cout.copyfmt(state);
@@ -331,7 +332,7 @@ int main(int argc, char **argv) {
     sigma_total *= 0.384 * 1e6;
     sigma_total_err *= 0.384 * 1e6;
 
-    cout << BOLDGREEN << "[gggpsipsi] " << RESET;
+    cout << BOLDGREEN << "[gg_psigg] " << RESET;
     cout << "Job finished:" << endl << endl;
     cout << LIGHTCYAN;
     cout << "            Elapsed time: "<< (double)(clock()-now)/CLOCKS_PER_SEC <<" seconds"<< endl;
