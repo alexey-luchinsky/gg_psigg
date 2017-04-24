@@ -43,7 +43,7 @@ dbl_type scale_fixed() {
 }
 
 dbl_type scale_inv_mass() {
-    return sum_mass2(k3, pPsi);
+    return 4*MC2+pT_squared(pPsi);
 }
 
 dbl_type scale_pT_a() {
