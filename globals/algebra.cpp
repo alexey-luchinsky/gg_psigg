@@ -75,6 +75,12 @@ dbl_type pT_squared(dbl_type (&v)[4]) {
     return v[0] * v[0] + v[1] * v[1];
 }
 
+dbl_type pseudo_rapidity(dbl_type(&v)[4]) {
+    dbl_type mom = sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
+    return log((mom + v[2]) / (mom - v[2])) / 2;
+}
+
+
 dbl_type sum_pT_squared(dbl_type (&v1)[4], dbl_type (&v2)[4]) {
     dbl_type px = v1[0] + v2[0];
     dbl_type py = v1[1] + v2[1];

@@ -1,5 +1,4 @@
 #include "config.h"
-
 #include <iostream>
 #include <ctime>
 #include <limits>
@@ -143,6 +142,7 @@ void print_current_kinematics();
 void parse_command_line(int argc, char **argv);
 
 void check_phsp_decay();
+dbl_type eta_psi();
 
 int main(int argc, char **argv) {
     clock_t now=clock();
@@ -250,7 +250,12 @@ int main(int argc, char **argv) {
             ++n_dropped;
             continue;
         };
-
+        
+        temp = eta_psi();
+        if( temp < cut_eta_psi_min || temp>cut_eta_psi_max) {
+            ++n_dropped;
+            continue;
+        }
 
         ++n_passed;
 

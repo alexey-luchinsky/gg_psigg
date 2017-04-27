@@ -40,6 +40,8 @@ extern dbl_type cut_pT_gluon_min;
 extern dbl_type cut_pT_psi_min;
 extern dbl_type cut_pT_psig_min;
 extern dbl_type cut_m_psig_min;
+extern dbl_type cut_eta_psi_min;
+extern dbl_type cut_eta_psi_max;
 
 inline
 bool debug() { return print_debug && n_passed < 20; }
@@ -131,6 +133,7 @@ void print_starting_configuration() {
     cout << prefix << "PDF set              : " << pdf_set_name << endl;
     cout << prefix << "Scale scheme         : " << scale_choice << endl;
     cout << prefix << "Psi  rapidity cut   : " << cut_y_psi_min << " < y1 < " << cut_y_psi_max << endl;
+    cout << prefix << "Psi  pseudorapidity cut   : " << cut_eta_psi_min << " < eta < " << cut_eta_psi_max << endl;
 //    cout << prefix << "Psi 2 rapidity cut   : " << cut_y_psi2_min << " < y2 < " << cut_y_psi2_max << endl;
     cout << prefix << "pT psig cut         : " << "pT > " << cut_pT_psig_min << endl;
     cout << prefix << "Psi pT cut           : " << "pT > " << cut_pT_psi_min << endl;

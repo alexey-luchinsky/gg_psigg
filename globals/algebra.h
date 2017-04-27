@@ -132,6 +132,8 @@ dbl_type pT(dbl_type (&v)[4]) { return sqrt(pT_squared(v)); }
 inline
 dbl_type rapidity(dbl_type (&v)[4]) { return log((v[3] - v[2]) / (v[3] + v[2])) / 2.0; }
 
+dbl_type pseudo_rapidity(dbl_type (&v)[4]);
+
 inline
 dbl_type sum_rapidity(dbl_type (&v1)[4], dbl_type (&v2)[4]) {
     return log((v1[3] + v2[3] - v1[2] - v2[2]) / (v1[3] + v2[3] + v1[2] + v2[2])) / 2.0;

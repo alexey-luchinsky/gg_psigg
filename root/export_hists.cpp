@@ -27,7 +27,7 @@ void initialize_default_args() {
     default_set_of_args.push_back("pT_psig_max:100");
     default_set_of_args.push_back("y_psi:100");
     default_set_of_args.push_back("m_psig_min:100");
-
+    default_set_of_args.push_back("eta_psi:100");
 //    default_set_of_args.push_back("k3_pT:100");
 //    default_set_of_args.push_back("k4_pT:100");
 //    default_set_of_args.push_back("k3_y:50");
@@ -130,10 +130,6 @@ void decay_psi(dbl_type(&v_psi)[4], dbl_type(&v_mu1)[4], dbl_type(&v_mu2)[4]) {
     assert(are_equal(sum_mass2(v_mu1, v_mu2), pow(mPsi, 2)));
 }
 
-dbl_type pseudo_rapidity(dbl_type(&v)[4]) {
-    dbl_type mom = sqrt(v[0] * v[0] + v[1] * v[1] + v[2] * v[2]);
-    return log((mom + v[2]) / (mom - v[2])) / 2;
-}
 
 
 template<typename T>

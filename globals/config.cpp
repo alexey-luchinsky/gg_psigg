@@ -27,6 +27,8 @@ dbl_type cut_pT_gluon_min = 1.0;
 dbl_type cut_pT_psi_min = 0.0;
 dbl_type cut_pT_psig_min=0.0;
 dbl_type cut_m_psig_min=0;
+dbl_type cut_eta_psi_min = -DBL_MAX;
+dbl_type cut_eta_psi_max = DBL_MAX;
 
 TCLAP::ValueArg<int> arg_s_max_factor("", "smax-factor", "Bound on the upper \\hat{s} limit", false, s_max_factor, "int");
 TCLAP::ValueArg<long> arg_random_seed("s", "seed", "Random seed", false, -1, "long");
@@ -38,6 +40,8 @@ TCLAP::ValueArg<double> arg_cut_y_psi_max("", "y-max", "Maximal rapidity of the 
 TCLAP::ValueArg<double> arg_cut_pT_psig_min("", "psig-pT", "Minimal pT of psi g", false, 0.0, "number");
 TCLAP::ValueArg<double> arg_cut_pT_psi("", "psi-pT", "Minimal pT of final psi", false, 0.0, "number");
 TCLAP::ValueArg<double> arg_cut_m_psig("", "m-psig", "Minimal psig mass", false, 0.0, "number");
+TCLAP::ValueArg<double> arg_cut_eta_psi_min("", "eta-psi-min", "Minimal psi pseudorapidity", false, -DBL_MAX, "number");
+TCLAP::ValueArg<double> arg_cut_eta_psi_max("", "eta-psi-max", "Maximall psi pseudorapidity", false, +DBL_MAX, "number");
 TCLAP::ValueArg<string> arg_pdf_set("p", "pdf", "LHAPDF pdf set to use", false, string("CT10"), "string");
 TCLAP::ValueArg<int> arg_do_ward_test("w", "test-ward", "Test ward identities only (values 1,2 and 3 for corr. gluons)", false, -1, "int");
 TCLAP::SwitchArg arg_parton_level("", "parton-level", "Run only parton level", false);
@@ -70,6 +74,8 @@ void insert_default_args(TCLAP::CmdLine &cmd) {
         cmd.add(arg_cut_pT_psig_min);
         cmd.add(arg_cut_pT_psi);
         cmd.add(arg_cut_m_psig);
+        cmd.add(arg_cut_eta_psi_min);
+        cmd.add(arg_cut_eta_psi_max);
         cmd.add(arg_pdf_set);
         cmd.add(arg_scale_choice);
         cmd.add(arg_debug);
@@ -97,6 +103,8 @@ void initialize_from_cmd() {
         cut_pT_gluon_min = arg_cut_pT_psig_min.getValue();
         cut_pT_psi_min = arg_cut_pT_psi.getValue();
         cut_m_psig_min = arg_cut_m_psig.getValue();
+        cut_eta_psi_min = arg_cut_eta_psi_min.getValue();
+        cut_eta_psi_max = arg_cut_eta_psi_max.getValue();
         output_file_name = arg_output_file_name.getValue();
         test_ward_only = arg_do_ward_test.getValue();
         parton_level_only = arg_parton_level.getValue();

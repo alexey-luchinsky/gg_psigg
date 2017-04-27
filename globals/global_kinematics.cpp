@@ -89,6 +89,7 @@ dbl_type pT_g_min();
 dbl_type pT_g_max();
 dbl_type y_g_min();
 dbl_type y_g_max();
+dbl_type eta_psi();
 dbl_type pT_psig_min();
 dbl_type pT_psig_max();
 dbl_type y_psig_min();
@@ -110,7 +111,7 @@ void initialize_variables_mapping() {
         variables_mapping["pT_psig_max"] = &pT_psig_max;
         variables_mapping["y_psi"] = &y_psi;
         variables_mapping["m_psig_min"] = &m_psig_min;
-        
+        variables_mapping["eta_psi"] = &eta_psi;
         
 //        variables_mapping["p2_pT"] = &var_pT2;
 //        variables_mapping["p1_y"] = &var_y1;

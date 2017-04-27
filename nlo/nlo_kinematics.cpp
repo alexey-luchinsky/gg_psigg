@@ -166,6 +166,10 @@ dbl_type m_psig_min() {
     return min(sum_mass(pPsi, k3), sum_mass(pPsi, k4));
 };
 
+dbl_type eta_psi() {
+    return pseudo_rapidity(pPsi);
+}
+
 dbl_type m_psig_max() {
     return max(sum_mass(pPsi, k3), sum_mass(pPsi, k4));
 };
