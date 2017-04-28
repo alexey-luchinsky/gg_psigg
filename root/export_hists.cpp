@@ -97,7 +97,6 @@ void initialize(int argc, char **argv) {
 dbl_type k_mu1[4], k_mu2[4], k_mu3[4], k_mu4[4];
 dbl_type m_mu = 0.106, m_mu2 = pow(m_mu, 2), mPsi = -1;
 extern Random random_generator;
-dbl_type PI = acos(-1);
 
 void print_vec4(string name, dbl_type(&v)[4]) {
     cout << name << "={" << v[0] << "," << v[1] << "," << v[2] << "," << v[3] << "}; mass=" << sqrt(mass2(v)) << ";" << endl;

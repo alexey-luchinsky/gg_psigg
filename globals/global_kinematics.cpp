@@ -23,6 +23,8 @@ dbl_type ecm;
 dbl_type hadrons_s;
 dbl_type s;
 
+dbl_type PI=acos(-1);
+
 map<string, __calculator__> variables_mapping;
 
 

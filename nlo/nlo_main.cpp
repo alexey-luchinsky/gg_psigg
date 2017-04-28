@@ -41,6 +41,7 @@ void initialize() {
     rambo = Rambo3((dbl_type) 0.0, (dbl_type) 0.0, (dbl_type) 2.0 * MC, &random_generator);
     init_mult_table();
     swich_all_diags(true);
+    switch_ggPsi_diags(true);
 
     cout << "MC=" << MC << endl;
 }
@@ -304,9 +305,9 @@ int main(int argc, char **argv) {
         }
 
         weight *= phase_space_factor;
-        matr2 *= FOUR_PI_5; //alpha_S
+        matr2 *= pow(4*PI,alphas_power); //alpha_S
         matr2 *= TWO_PI_4 / (2.0 * s); //cross section factor
-        matr2 /= 2 * 2 * 8 * 2 * 8; //symmetry coefficients
+        matr2 /=  2 * 8 * 2 * 8; //symmetry coefficients
 
         string tuple_vars = "matr2:wt:scale2:alpha5:pdf1:pdf2:";
         tuple_vars += "hat_s:e_pair:y_pair:pT_pair:dphi:";

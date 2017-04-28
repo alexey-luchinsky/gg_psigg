@@ -34,7 +34,7 @@ extern cmplx Amp[nColors];
 const int nDiags=123;
 extern bool diag[nDiags];
 
-
+extern dbl_type PI;
 
 extern dbl_type s;
 
