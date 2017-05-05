@@ -42,6 +42,7 @@ void initialize() {
     init_mult_table();
     swich_all_diags(true);
     switch_ggPsi_diags(true);
+    switch_gPsi_diags(false);
 
     cout << "MC=" << MC << endl;
 }

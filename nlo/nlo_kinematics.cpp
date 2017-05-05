@@ -121,6 +121,61 @@ void switch_ggPsi_diags(bool state) {
     diag[119] = state;
 };
 
+void switch_gPsi_diags(bool state) {
+	 diag[4]=state;
+	 diag[5]=state;
+	 diag[9]=state;
+	 diag[10]=state;
+	 diag[37]=state;
+	 diag[38]=state;
+	 diag[39]=state;
+	 diag[40]=state;
+	 diag[43]=state;
+	 diag[44]=state;
+	 diag[52]=state;
+	 diag[53]=state;
+	 diag[54]=state;
+	 diag[55]=state;
+	 diag[58]=state;
+	 diag[59]=state;
+	 diag[64]=state;
+	 diag[65]=state;
+	 diag[66]=state;
+	 diag[67]=state;
+	 diag[70]=state;
+	 diag[71]=state;
+	 diag[76]=state;
+	 diag[77]=state;
+	 diag[78]=state;
+	 diag[79]=state;
+	 diag[82]=state;
+	 diag[83]=state;
+	 diag[88]=state;
+	 diag[89]=state;
+	 diag[90]=state;
+	 diag[91]=state;
+	 diag[93]=state;
+	 diag[94]=state;
+	 diag[95]=state;
+	 diag[97]=state;
+	 diag[100]=state;
+	 diag[101]=state;
+	 diag[102]=state;
+	 diag[103]=state;
+	 diag[104]=state;
+	 diag[105]=state;
+	 diag[106]=state;
+	 diag[107]=state;
+	 diag[109]=state;
+	 diag[111]=state;
+	 diag[112]=state;
+	 diag[113]=state;
+	 diag[115]=state;
+	 diag[118]=state;
+	 diag[119]=state;
+	 diag[121]=state;
+}
+
 dbl_type pT_psi() {
     return pT(pPsi);
 };

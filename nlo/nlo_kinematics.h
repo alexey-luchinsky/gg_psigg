@@ -26,8 +26,8 @@ void init_mult_table();
 
 // switching on/off diagrams
 void swich_all_diags(bool state);
-void switch_ggPsi_diags(bool state);
-
+void switch_ggPsi_diags(bool state);   // J/psi produced in gg fusion 
+void switch_gPsi_diags(bool state);    // final gluon emitted from J/psi
 dbl_type var_hat_s();
 
 dbl_type pT_psi();
