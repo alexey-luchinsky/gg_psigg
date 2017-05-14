@@ -15,10 +15,6 @@ include(FindROOT.cmake)
 include(FindPythia8.cmake)
 
 
-set(Boost_USE_STATIC_LIBS OFF)
-set(Boost_USE_MULTITHREADED ON)
-set(Boost_USE_STATIC_RUNTIME OFF)
-find_package(Boost COMPONENTS system)
 
 
 set(CMAKE_CXX_LINK_FLAGS "${CMAKE_CXX_LINK_FLAGS} $ENV{CMAKE_CXX_LINK_FLAGS}")
@@ -41,7 +37,7 @@ find_library(LHAPDF_LIBRARY NAMES LHAPDF HINTS "${LHAPDF_LIBDIR}")
 message(STATUS "LHAPDF_LIBRARY = ${LHAPDF_LIBRARY}")
 
 
-include_directories(${Boost_INCLUDE_DIRS})
+#include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${LHAPDF_INCLUDE})
 include_directories(${PYTHIA8_INCLUDE_DIRS})
 
@@ -53,11 +49,9 @@ include_directories(util)
 include_directories(./)
 
 
-include_directories(${Boost_INCLUDE_DIRS})
 include_directories(${ROOT_INCLUDE_DIR})
 
 add_executable(gg_psigg "nlo/nlo_main.cpp" ${SOURCE_FILES})
-target_link_libraries(gg_psigg ${Boost_LIBRARIES})
 target_link_libraries(gg_psigg ${LHAPDF_LIBRARY})
 target_link_libraries(gg_psigg ${ROOT_LIBRARIES})
 
@@ -71,12 +65,6 @@ list(REMOVE_ITEM R_SOURCE_FILES "${CMAKE_CURRENT_SOURCE_DIR}/root/export_parton_
 
 
 add_executable(export-histograms "root/export_hists.cpp" ${R_SOURCE_FILES})
-target_link_libraries(export-histograms ${Boost_LIBRARIES})
-##target_link_libraries(getHist ${LHAPDF_LIBRARY})
 target_link_libraries(export-histograms ${ROOT_LIBRARIES})
 
-#add_executable(rescale "root/rescale.cpp" ${R_SOURCE_FILES})
-#target_link_libraries(rescale ${Boost_LIBRARIES})
-#target_link_libraries(rescale ${LHAPDF_LIBRARY})
-#target_link_libraries(rescale ${ROOT_LIBRARIES})
 

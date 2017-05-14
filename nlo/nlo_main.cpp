@@ -41,8 +41,8 @@ void initialize() {
     rambo = Rambo3((dbl_type) 0.0, (dbl_type) 0.0, (dbl_type) 2.0 * MC, &random_generator);
     init_mult_table();
     swich_all_diags(true);
-    switch_ggPsi_diags(true);
-    switch_gPsi_diags(false);
+//    switch_ggPsi_diags(true);
+//    switch_gPsi_diags(false);
 
     cout << "MC=" << MC << endl;
 }
@@ -318,11 +318,11 @@ int main(int argc, char **argv) {
 
         //        todo write x1, x2
         Float_t tuple_vals[11 + 3 * 6] = {
-            matr2, weight, scale_Q2, alphas_strong, pdf1, pdf2,
-            s, sum_mass(k3, k4), sum_rapidity(k3, k4), sum_pT(k3, k4), fabs(phi(k3) - phi(k4)),
-            k3[3], k3[0], k3[1], k3[2], pT(k3), rapidity(k3),
-            k4[3], k4[0], k4[1], k4[2], pT(k4), rapidity(k4),
-            pPsi[3], pPsi[0], pPsi[1], pPsi[2], pT(pPsi), rapidity(pPsi)
+	  (Float_t)matr2, (Float_t)weight, (Float_t)scale_Q2, (Float_t)alphas_strong, (Float_t)pdf1, (Float_t)pdf2,
+            (Float_t)s, (Float_t)sum_mass(k3, k4), (Float_t)sum_rapidity(k3, k4), (Float_t)sum_pT(k3, k4), (Float_t)fabs(phi(k3) - phi(k4)),
+            (Float_t)k3[3], (Float_t)k3[0], (Float_t)k3[1], (Float_t)k3[2], (Float_t)pT(k3), (Float_t)rapidity(k3),
+            (Float_t)k4[3], (Float_t)k4[0], (Float_t)k4[1], (Float_t)k4[2], (Float_t)pT(k4), (Float_t)rapidity(k4),
+            (Float_t)pPsi[3], (Float_t)pPsi[0], (Float_t)pPsi[1], (Float_t)pPsi[2], (Float_t)pT(pPsi), (Float_t)rapidity(pPsi)
         };
         root_tuple->Fill(tuple_vals);
 
